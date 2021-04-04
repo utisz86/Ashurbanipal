@@ -1,13 +1,11 @@
 # This module handles the email client in order to download the data.
 
-# solutoin from: https://www.thepythoncode.com/article/reading-emails-in-python
+# solution from: https://www.thepythoncode.com/article/reading-emails-in-python
 
 
 # import libraries
 import imaplib
 import email
-from email.header import decode_header
-import webbrowser
 import os
 
 # account credentials

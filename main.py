@@ -9,8 +9,8 @@ kivy.require('2.0.0')
 from kivy.app import App
 from kivy.uix.label import Label
 
-# Own modul for data
-
+# Own moduls for data
+import download_data
 
 class AshurbanipalApp(App):
 

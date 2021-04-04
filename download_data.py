@@ -54,7 +54,7 @@ for i in range(messages, messages-N, -1):
                 filename = "key_data_" + str(i) + ".txt"
                 filepath = os.path.join(folder_name, filename)
                 # write the file
-                open(filepath, "w").write(body)
+                open(filepath, "w", newline='').write(body)
 
             else:
                 continue

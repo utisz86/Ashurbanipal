@@ -8,6 +8,7 @@ kivy.require('2.0.0')
 
 from kivy.app import App
 from kivy.uix.label import Label
+from kivy.uix.boxlayout import BoxLayout
 
 # Own moduls for data
 import download_data
@@ -16,7 +17,11 @@ import en_decrypt_data
 class AshurbanipalApp(App):
 
     def build(self):
-        return Label(text='Hello world')
+
+        # Basic frame
+        root_widget = BoxLayout(orientation='horizontal')
+
+        return root_widget
 
 # Start the Kivy Application loophole
 

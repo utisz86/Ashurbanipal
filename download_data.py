@@ -29,7 +29,7 @@ N = 25
 # total number of emails
 messages = int(messages[0])
 
-if N>messages:
+if N > messages:
     N = messages
 
 for i in range(messages, messages-N, -1):
@@ -44,15 +44,23 @@ for i in range(messages, messages-N, -1):
                 body = part.get_payload(decode=True)
                 body = body.decode()
 
-                # Save the file
+                # Save the fil
                 folder_name = "data_base"
                 if not os.path.isdir("data_base"):
                     # make a folder for this email/data
                     os.mkdir("data_base")
                 filename = "key_data_" + str(i) + ".txt"
                 filepath = os.path.join(folder_name, filename)
+                # Remove empty lines
+                lines = body.split("\n")
+                non_empty_lines = [line for line in lines if line.strip() != ""]
+                body = ""
+                for line in non_empty_lines:
+                    body += line + "\n"
+
                 # write the file
-                open(filepath, "w", newline='').write(body)
+                with open(filepath, "a", newline='') as f:
+                    f.write(body)
 
             else:
                 continue

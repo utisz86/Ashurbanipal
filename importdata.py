@@ -5,5 +5,8 @@ with open("data_base/key_data_8.txt", 'r', newline='') as f:
         (key, val) = line.strip('\r\n').split('; ')
         data_dictionary[key] = val
 # Decrypt file
-# Put into
+# TODO implement choose file
+# TODO implement encryption
+# TODO implement add password
 
+print(data_dictionary)

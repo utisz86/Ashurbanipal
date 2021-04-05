@@ -13,6 +13,7 @@ from kivy.uix.boxlayout import BoxLayout
 # Own moduls for data
 import download_data
 import en_decrypt_data
+import importdata
 
 class AshurbanipalApp(App):
 

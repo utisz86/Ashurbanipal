@@ -4,14 +4,14 @@
 class user_password:
 
     # Construction
-    def __init__(self, rollno, username, user_code):
-        self.rollno = rollno
+    def __init__(self, username, user_code):
+        self.rollno = len(data_ls)
         self.username = username
         self.user_code = user_code
 
     # Function to create and append a new username-password combination
-    def new_combination(self, rollno, username, user_code):
-        ob = user_password(rollno, username, user_code)
+    def new_combination(self, username, user_code):
+        ob = user_password(username, user_code)
         data_ls.append(ob)
 
     # Function to display username-password combination
@@ -42,14 +42,13 @@ class user_password:
 # Import last text file
 data_dictionary = {}
 data_ls = []
-obj = user_password('', 0, 0)
+obj = user_password(0, 0)
 with open("data_base/key_data_8.txt", 'r', newline='') as f:
-    i = 0
     for line in f:
         (key, val) = line.strip('\r\n').split('; ')
         data_dictionary[key] = val
-        obj.new_combination(i, key, val)
-        i += 1
+        obj.new_combination(key, val)
+
 
 
 # Decrypt file
@@ -59,6 +58,6 @@ with open("data_base/key_data_8.txt", 'r', newline='') as f:
 
 # TODO delete display lines
 # TODO delete dictinary structure
-#print(data_dictionary)
-#for i in range(data_ls.__len__()):
-#    obj.display(data_ls[i])
+print(data_dictionary)
+for i in range(data_ls.__len__()):
+    obj.display(data_ls[i])
